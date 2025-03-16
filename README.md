@@ -4,6 +4,8 @@
 [![Licença](https://img.shields.io/badge/licença-MIT-blue)](https://opensource.org/licenses/MIT)
 [![Linguagens](https://img.shields.io/badge/linguagens-HTML%20%7C%20CSS%20%7C%20JS-yellow)](https://img.shields.io/badge/linguagens-HTML%20%7C%20CSS%20%7C%20JS-yellow)
 
+![printpaginicial](assets/front_amigo_secreto.png)
+
 ## 🎯 Sobre o Projeto
 
 Este projeto é um site simples e divertido para organizar sorteios de amigo secreto. Crie sua lista de participantes e deixe que o site faça o sorteio de forma aleatória e segura!
