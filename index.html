@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Amigo Secreto</title>
+</head>
+<body>
+    <main class="main-content">
+        <header class="header-banner">
+            <h1 class="main-title">Faça Seu Sorteio</h1>
+            <img src="assets/amigo-secreto.png" alt="Imagem representativa de amigos">
+        </header>
+        <section class="input-section">
+            <h2 class="section-title">Adicione abaixo o nome dos amigos para sortear</h2>
+            <div class="input-wrapper">
+                <input type="text" id="amigo" class="input-name" placeholder="Digite o nome e sobrenome" aria-label="Digite o nome e sobrenome do amigo">
+                <button class="button-add" onclick="adicionarAmigo()"> Incluir </button>
+            </div>
+            <table id="listaAmigos" class="name-list" aria-labelledby="listaAmigos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <ul id="resultado" class="result-list" aria-live="polite"></ul>
+            <div class="button-container">
+                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto"> 
+                    Sortear Agora!
+                </button>
+            </div>
+            <div class="verify-container">
+                <input type="text" id="verificacao" class="input-verify" placeholder="Digite aqui o seu nome para ver seu amigo secreto">
+                <button class="button-verify" onclick="verificarAmigoSorteado()">Verificar</button>
+            </div>
+            <div class="button-container">
+                <button class="button-clear" onclick="limparInformacoes()">Limpar Informações</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Joanne Lima (contato@empowerapps.com.br). Todos os direitos reservados.</p>
+    </footer>
+    <div id="toast"></div>
+    <div id="imageToast" class="image-toast" style="display: none;">
+        <img src="assets/2.png" alt="Imagem de Confirmação">
+        <button class="button-ok" onclick="fecharImageToast()">OK</button>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>

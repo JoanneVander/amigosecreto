@@ -1,0 +1,419 @@
+:root {
+    --color-primary: #630ea3;
+    --color-secondary: #0000008d;
+    --color-tertiary: #ffffff;
+    --color-button: #630ea3;
+    --color-button-hover: #bf67e7dd;
+    --color-text: #000000;
+    --color-white: #ffffff;
+}
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner */
+.header-banner {
+    flex: 0 0 70%;  
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.header-banner img {
+    width: 100%;
+    height: auto; 
+    object-fit: contain; 
+    display: block;
+}
+
+/* Seção de entrada */
+.input-section {
+    flex: 0 0 30%; 
+    background-color: var(--color-secondary);
+    border: 1px solid #630ea3;
+    border-radius: 64px 64px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px 20px; 
+    width: 100%;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .header-banner, .input-section {
+        flex: 1 0 auto;
+        width: 100%;
+    }
+    .button-container,
+    .verify-container {
+        gap: 10px;
+    }
+    .button-draw,
+    .button-add,
+    .button-verify,
+    .button-clear {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+.input-section .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 48px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+}
+
+.section-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 20px 0 30px 0;
+    text-align: center;
+}
+
+/* Contêineres de entrada e botão */
+.input-wrapper, .button-container, .verify-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+/* Campo de entrada para o nome */
+.input-name {
+    width: 100%; 
+    padding: 15px 15px; 
+    border: 3px solid #2c033e;
+    border-radius: 25px;
+    font-size: 16px;
+    box-shadow: 0 4px 4px rgba(133, 37, 236, 0.837);
+    margin-bottom: 40px;
+}
+
+/* Campo de verificação */
+.input-verify {
+    width: 100%;
+    padding: 15px 20px;
+    border: 3px solid #2c033e;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Botão para adicionar na lista */
+.button-add {
+    width: 10%; 
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 40px;
+    padding: 6px 6px;
+    font-size: 14px;    
+    border: 3px solid #2c033e;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.button-add:hover {
+    background-color: #b86cf1e3;
+}
+
+/* Estilos de entrada de texto */
+.input-title {
+    flex: 1;
+    padding: 20px;
+    font-size: 16px;
+    border: 20px solid #783de74d;
+    border-right: 20px;
+    border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    box-shadow: 0 4px 4px rgba(133, 37, 236, 0.837);
+}
+
+/* Estilos de botão */
+button {
+    padding: 10px 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    font-size: 16px;
+    border: 2px solid #783de74d;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px rgba(133, 37, 236, 0.837);
+    cursor: pointer;
+}
+
+/* Botão para sortear */
+.button-draw {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    color: #e0e0e0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Lista de nomes com rolagem */
+.name-list {
+    display: none;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.name-list th,
+.name-list td {
+    border: 2px solid #630ea3;
+    padding: 10px;
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    color: white;
+    background: #460b88;
+}
+
+.name-list th {
+    background: #ff6b6b;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+}
+
+.result-list {
+    margin-top: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif; 
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Botão para limpar informações */
+.button-clear {
+    background-color: #ff6b6b;
+    color: var(--color-tertiary);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 12px;  
+    font-size: 14px;      
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+.button-clear:hover {
+    background-color: #ff3b3b;
+}
+
+/* Toast de exibição de resultado */
+#toast {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: var(--color-button); /* roxo */
+    color: var(--color-tertiary); /* branco */
+    font-size: 20px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: none;
+}
+
+/* Estilos para a imagem de confirmação */
+.image-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-button); /* roxo */
+    color: var(--color-tertiary);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1100;
+    text-align: center;
+    display: none;
+}
+
+.image-toast img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.button-ok {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-ok:hover {
+    background-color: #e0e0e0;
+}
+
+/* estilo para os itens da lista (nomes e resultados) */
+.name-list li,
+.result-list li {
+    color: white;
+    background-color: rgba(194, 35, 167, 0.621);
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.result-list li:first-child {
+    font-size: 11px;
+}
+
+.verify-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-tertiary);
+    background-color: var(--color-secondary);
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.btn-edit {
+    background: transparent;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.btn-edit i {
+    font-size: 20px;
+    color: var(--color-text);
+}
+
+.button-container,
+.verify-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.button-draw,
+.button-add,
+.button-verify,
+.button-clear {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 40px;
+}
+
+.button-draw,
+.button-add,
+.button-verify,
+.button-clear {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.name-list {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #630ea3;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+}
+
+.footer {
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    background-color: var(--color-secondary);
+    color: var(--color-tertiary);
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 768px) {
+    .button-container,
+    .verify-container {
+        gap: 10px;
+    }
+    .button-draw,
+    .button-add,
+    .button-verify,
+    .button-clear {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
